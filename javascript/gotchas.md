@@ -79,14 +79,7 @@ If you're asking this question, it means you're getting knee-deep into JavaScrip
 
 The first thing you need to know is that JavaScript does NOT use classical OOP.  It uses something called prototypal OOP.  This is very, very different.  If you really want to know how JavaScript OOP works, you need to read [Constructors considered mildly confusing, by Joost Diepenmaat][constructors-confusing].  Joost does a better job of explaining it than I ever will.
 
-But for the lazy, I'll summarize: JavaScript does not have any classes.  You
-don't create a class and spawn new objects off of it like in other languages.
-Instead, you create a new object, and set its prototype. An object's prototype
-is typically set by using the `new` keyword on a function with a `prototype` property,
-which sets the created object's prototype (accessible via the `__proto__`
-property on the new object in some implementations) to the object referenced by the function's
-`prototype`. There are other ways to set an object's prototype, including the
-nonstandard but direct `x.__proto = xsPrototype`.
+But for the lazy, I'll summarize: JavaScript does not have any classes.  You don't create a class and spawn new objects off of it like in other languages.  Instead, you create a new object, and set its prototype. An object's prototype is typically set at creation time by using the `new` keyword on a function with a `prototype` property, which sets the created object's prototype (accessible via the `__proto__` property on the new object in some implementations) to the object referenced by the function's `prototype`. There are other ways to set an object's prototype, including the nonstandard but direct `x.__proto__ = xsPrototype`.
 
 When you refer to an object's property, if that property doesn't exist JavaScript will look at the prototype object...and its prototype, and its prototype, all the way up until it hits the `Object` object.
 
